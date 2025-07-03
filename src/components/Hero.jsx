@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion'
-import {ArrowDown,Lightbulb,Home,Palette} from 'lucide-react'
+import {ArrowDown,Lightbulb,Home,Palette,Sparkles,Zap,Shield} from 'lucide-react'
 
 const fadeInUp = {
   initial:{y:30,opacity:0},
@@ -9,8 +9,17 @@ const fadeInUp = {
 const staggerContainer = {
   animate:{
     transition:{
-      staggerChildren:0.15
+      staggerChildren:0.1
     }
+  }
+}
+
+const floatingAnimation = {
+  y: [0, -10, 0],
+  transition: {
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut"
   }
 }
 
@@ -54,7 +63,7 @@ className="hero-subtitle"
 variants={fadeInUp}
 transition={{duration:0.8,ease:[0.6,0.01,-0.05,0.95]}}
 >
-Профессиональные LED решения для мебели и интерьера с безупречным качеством
+Профессиональные LED решения для мебели и интерьера с безупречным качеством и энергоэффективностью
 </motion.p>
 <motion.div
 className="hero-buttons"
@@ -67,6 +76,7 @@ whileHover={{scale:1.02,y:-2}}
 whileTap={{scale:0.98}}
 transition={{duration:0.15,ease:"easeOut"}}
 >
+<Sparkles size={16} style={{marginRight:'0.5rem'}}/>
 Получить консультацию
 </motion.button>
 <motion.button
@@ -90,27 +100,33 @@ className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.2,ease:"easeOut"}}
 >
-<Lightbulb className="feature-icon"/>
+<motion.div animate={floatingAnimation}>
+<Zap className="feature-icon"/>
+</motion.div>
 <h3>Энергоэффективность</h3>
-<p>Современные LED технологии с минимальным энергопотреблением</p>
+<p>Современные LED технологии с минимальным энергопотреблением и максимальной яркостью</p>
 </motion.div>
 <motion.div
 className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.2,ease:"easeOut"}}
 >
-<Home className="feature-icon"/>
+<motion.div animate={floatingAnimation}>
+<Shield className="feature-icon"/>
+</motion.div>
 <h3>Долговечность</h3>
-<p>Надежные решения со сроком службы до 50 000 часов</p>
+<p>Надежные решения со сроком службы до 50 000 часов и гарантией качества</p>
 </motion.div>
 <motion.div
 className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.2,ease:"easeOut"}}
 >
+<motion.div animate={floatingAnimation}>
 <Palette className="feature-icon"/>
-<h3>Дизайн</h3>
-<p>Стильная подсветка для любого интерьера и мебели</p>
+</motion.div>
+<h3>Стильный дизайн</h3>
+<p>Элегантная подсветка для любого интерьера с широким выбором цветовых решений</p>
 </motion.div>
 </motion.div>
 </div>

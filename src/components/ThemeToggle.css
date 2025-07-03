@@ -2,7 +2,7 @@
 position:fixed;
 top:1.25rem;
 right:1.25rem;
-z-index:1000;
+z-index:1002;
 background:rgba(26,26,46,0.9);
 border:1px solid rgba(51,65,85,0.3);
 border-radius:50%;
@@ -22,6 +22,7 @@ will-change:transform;
 background:rgba(26,26,46,1);
 box-shadow:0 6px 20px rgba(0,0,0,0.3);
 border-color:rgba(59,130,246,0.5);
+transform:scale(1.05);
 }
 .theme-toggle svg{
 color:var(--text-primary);

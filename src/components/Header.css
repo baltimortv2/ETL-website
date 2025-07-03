@@ -3,7 +3,7 @@ position:fixed;
 top:0;
 left:0;
 right:0;
-z-index:100;
+z-index:1000;
 background:rgba(12,12,20,0.95);
 backdrop-filter:blur(20px);
 -webkit-backdrop-filter:blur(20px);
@@ -78,6 +78,7 @@ color:var(--text-primary);
 font-size:1.5rem;
 cursor:pointer;
 padding:0.5rem;
+z-index:1001;
 }
 .mobile-nav{
 display:none;
@@ -90,9 +91,11 @@ backdrop-filter:blur(20px);
 -webkit-backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(51,65,85,0.2);
 padding:1rem 0;
+z-index:999;
 }
 [data-theme="light"] .mobile-nav{
 background:rgba(255,255,255,0.98);
+border-bottom:1px solid rgba(226,232,240,0.3);
 }
 .mobile-nav.active{
 display:block;
@@ -106,6 +109,7 @@ font-size:1rem;
 padding:0.75rem 1.5rem;
 width:100%;
 text-align:left;
+display:block;
 }
 /* Планшеты */
 @media (max-width:768px){
@@ -139,6 +143,10 @@ font-size:1.1rem;
 }
 .mobile-menu-toggle{
 font-size:1.25rem;
+}
+.mobile-nav .nav a{
+font-size:0.9rem;
+padding:0.625rem 1rem;
 }
 }
 /* Маленькие дисплеи */
