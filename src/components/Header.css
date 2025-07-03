@@ -10,39 +10,47 @@ backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(51,65,85,0.2);
 padding:1rem 0;
 will-change:transform;
+min-height:60px;
+display:flex;
+align-items:center;
 }
 [data-theme="light"] .header{
 background:rgba(255,255,255,0.95);
+border-bottom:1px solid rgba(226,232,240,0.3);
 }
 .container{
 max-width:1200px;
 margin:0 auto;
-padding:0 2rem;
+padding:0 1.5rem;
 display:flex;
 justify-content:space-between;
 align-items:center;
+width:100%;
 }
 .logo h1{
-font-size:1.75rem;
+font-size:1.5rem;
 font-weight:700;
 background:var(--gradient-primary);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 background-clip:text;
 will-change:transform;
+margin:0;
 }
 .nav{
 display:flex;
-gap:2rem;
+gap:1.5rem;
 align-items:center;
 }
 .nav a{
 color:var(--text-secondary);
 text-decoration:none;
 font-weight:500;
+font-size:0.9rem;
 transition:color 0.15s ease;
 position:relative;
 will-change:transform;
+padding:0.5rem 0;
 }
 .nav a:hover{
 color:var(--text-primary);
@@ -50,7 +58,7 @@ color:var(--text-primary);
 .nav a::after{
 content:"";
 position:absolute;
-bottom:-4px;
+bottom:0;
 left:0;
 width:0;
 height:2px;
@@ -61,14 +69,96 @@ will-change:width;
 .nav a:hover::after{
 width:100%;
 }
+/* Мобильное меню */
+.mobile-menu-toggle{
+display:none;
+background:none;
+border:none;
+color:var(--text-primary);
+font-size:1.5rem;
+cursor:pointer;
+padding:0.5rem;
+}
+.mobile-nav{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+right:0;
+background:rgba(12,12,20,0.98);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(51,65,85,0.2);
+padding:1rem 0;
+}
+[data-theme="light"] .mobile-nav{
+background:rgba(255,255,255,0.98);
+}
+.mobile-nav.active{
+display:block;
+}
+.mobile-nav .nav{
+flex-direction:column;
+gap:0.5rem;
+}
+.mobile-nav .nav a{
+font-size:1rem;
+padding:0.75rem 1.5rem;
+width:100%;
+text-align:left;
+}
+/* Планшеты */
 @media (max-width:768px){
 .container{
 padding:0 1rem;
 }
+.logo h1{
+font-size:1.25rem;
+}
 .nav{
-gap:1.5rem;
+display:none;
+}
+.mobile-menu-toggle{
+display:block;
+}
+.mobile-nav.active{
+display:block;
+}
+}
+/* Мобильные устройства */
+@media (max-width:480px){
+.header{
+padding:0.75rem 0;
+min-height:55px;
+}
+.container{
+padding:0 0.75rem;
+}
+.logo h1{
+font-size:1.1rem;
+}
+.mobile-menu-toggle{
+font-size:1.25rem;
+}
+}
+/* Маленькие дисплеи */
+@media (max-width:1366px){
+.container{
+max-width:1024px;
 }
 .nav a{
-font-size:0.9rem;
+font-size:0.85rem;
+}
+}
+@media (max-width:1024px){
+.container{
+max-width:768px;
+padding:0 1.25rem;
+}
+.logo h1{
+font-size:1.35rem;
+}
+.nav{
+gap:1.25rem;
 }
 } 

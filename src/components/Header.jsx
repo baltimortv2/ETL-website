@@ -1,5 +1,14 @@
 import {motion} from 'framer-motion'
+import {Menu,X} from 'lucide-react'
+import {useState} from 'react'
+
 export function Header(){
+const [mobileMenuOpen,setMobileMenuOpen] = useState(false)
+
+const toggleMobileMenu = () => {
+setMobileMenuOpen(!mobileMenuOpen)
+}
+
 return (
 <motion.header
 className="header"
@@ -15,6 +24,7 @@ transition={{duration:0.15,ease:"easeOut"}}
 >
 <h1>ETL</h1>
 </motion.div>
+
 <nav className="nav">
 <motion.a
 href="#home"
@@ -45,7 +55,57 @@ transition={{duration:0.15,ease:"easeOut"}}
 Контакты
 </motion.a>
 </nav>
+
+<motion.button
+className="mobile-menu-toggle"
+onClick={toggleMobileMenu}
+whileTap={{scale:0.95}}
+transition={{duration:0.1}}
+>
+{mobileMenuOpen ? <X size={20}/> : <Menu size={20}/>}
+</motion.button>
 </div>
+
+<motion.div
+className={`mobile-nav ${mobileMenuOpen ? 'active' : ''}`}
+initial={false}
+animate={{
+opacity:mobileMenuOpen ? 1 : 0,
+height:mobileMenuOpen ? 'auto' : 0
+}}
+transition={{duration:0.3,ease:"easeOut"}}
+>
+<nav className="nav">
+<motion.a
+href="#home"
+onClick={toggleMobileMenu}
+whileTap={{scale:0.98}}
+>
+Главная
+</motion.a>
+<motion.a
+href="#products"
+onClick={toggleMobileMenu}
+whileTap={{scale:0.98}}
+>
+Продукция
+</motion.a>
+<motion.a
+href="#solutions"
+onClick={toggleMobileMenu}
+whileTap={{scale:0.98}}
+>
+Решения
+</motion.a>
+<motion.a
+href="#contact"
+onClick={toggleMobileMenu}
+whileTap={{scale:0.98}}
+>
+Контакты
+</motion.a>
+</nav>
+</motion.div>
 </motion.header>
 )
 } 
