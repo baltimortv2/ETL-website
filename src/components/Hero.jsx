@@ -1,5 +1,5 @@
 import {motion} from 'framer-motion'
-import {ArrowDown,Zap,Database,BarChart3} from 'lucide-react'
+import {ArrowDown,Lightbulb,Home,Palette} from 'lucide-react'
 export function Hero(){
 return (
 <motion.section
@@ -33,8 +33,8 @@ initial={{y:30,opacity:0}}
 animate={{y:0,opacity:1}}
 transition={{duration:0.8,delay:0.4}}
 >
-Современные решения для
-<span className="gradient-text">обработки данных</span>
+Светодиодная подсветка для
+<span className="gradient-text">современной мебели</span>
 </motion.h1>
 <motion.p
 className="hero-subtitle"
@@ -42,7 +42,7 @@ initial={{y:30,opacity:0}}
 animate={{y:0,opacity:1}}
 transition={{duration:0.8,delay:0.6}}
 >
-ETL процессы нового поколения с использованием передовых технологий
+Профессиональные LED решения для мебели и интерьера с безупречным качеством
 </motion.p>
 <motion.div
 className="hero-buttons"
@@ -55,14 +55,14 @@ className="btn-primary"
 whileHover={{scale:1.05,y:-2}}
 whileTap={{scale:0.98}}
 >
-Начать работу
+Получить консультацию
 </motion.button>
 <motion.button
 className="btn-secondary"
 whileHover={{scale:1.05,y:-2}}
 whileTap={{scale:0.98}}
 >
-Узнать больше
+Каталог продукции
 </motion.button>
 </motion.div>
 </motion.div>
@@ -77,27 +77,27 @@ className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.3}}
 >
-<Zap className="feature-icon"/>
-<h3>Высокая скорость</h3>
-<p>Молниеносная обработка больших объемов данных</p>
+<Lightbulb className="feature-icon"/>
+<h3>Энергоэффективность</h3>
+<p>Современные LED технологии с минимальным энергопотреблением</p>
 </motion.div>
 <motion.div
 className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.3}}
 >
-<Database className="feature-icon"/>
-<h3>Надежность</h3>
-<p>Безопасное хранение и передача данных</p>
+<Home className="feature-icon"/>
+<h3>Долговечность</h3>
+<p>Надежные решения со сроком службы до 50 000 часов</p>
 </motion.div>
 <motion.div
 className="feature-card"
 whileHover={{y:-5,scale:1.02}}
 transition={{duration:0.3}}
 >
-<BarChart3 className="feature-icon"/>
-<h3>Аналитика</h3>
-<p>Мощные инструменты для анализа данных</p>
+<Palette className="feature-icon"/>
+<h3>Дизайн</h3>
+<p>Стильная подсветка для любого интерьера и мебели</p>
 </motion.div>
 </motion.div>
 </div>

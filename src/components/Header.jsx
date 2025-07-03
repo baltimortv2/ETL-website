@@ -24,18 +24,18 @@ transition={{duration:0.2}}
 Главная
 </motion.a>
 <motion.a
-href="#about"
+href="#products"
 whileHover={{y:-2}}
 transition={{duration:0.2}}
 >
-О нас
+Продукция
 </motion.a>
 <motion.a
-href="#services"
+href="#solutions"
 whileHover={{y:-2}}
 transition={{duration:0.2}}
 >
-Услуги
+Решения
 </motion.a>
 <motion.a
 href="#contact"
