@@ -1,26 +1,37 @@
 .theme-toggle{
 position:fixed;
-top:2rem;
-right:2rem;
+top:1.5rem;
+right:1.5rem;
 z-index:1000;
-background:var(--surface-color);
-border:1px solid var(--border-color);
+background:rgba(26,26,46,0.9);
+border:1px solid rgba(51,65,85,0.3);
 border-radius:50%;
-width:48px;
-height:48px;
+width:44px;
+height:44px;
 display:flex;
 align-items:center;
 justify-content:center;
 cursor:pointer;
-transition:var(--transition);
-box-shadow:var(--shadow-md);
-backdrop-filter:blur(8px);
+transition:all 0.15s ease;
+box-shadow:0 4px 15px rgba(0,0,0,0.2);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+will-change:transform;
 }
 .theme-toggle:hover{
-background:var(--surface-hover);
-box-shadow:var(--shadow-lg);
+background:rgba(26,26,46,1);
+box-shadow:0 6px 20px rgba(0,0,0,0.3);
+border-color:rgba(102,126,234,0.5);
 }
 .theme-toggle svg{
 color:var(--text-primary);
-transition:var(--transition);
+transition:color 0.15s ease;
+}
+[data-theme="light"] .theme-toggle{
+background:rgba(248,250,252,0.9);
+border-color:rgba(226,232,240,0.8);
+}
+[data-theme="light"] .theme-toggle:hover{
+background:rgba(248,250,252,1);
+border-color:rgba(102,126,234,0.5);
 } 

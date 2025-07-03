@@ -4,13 +4,15 @@ top:0;
 left:0;
 right:0;
 z-index:100;
-background:rgba(13,17,23,0.8);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border-color);
+background:rgba(12,12,20,0.95);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(51,65,85,0.2);
 padding:1rem 0;
+will-change:transform;
 }
 [data-theme="light"] .header{
-background:rgba(255,255,255,0.8);
+background:rgba(255,255,255,0.95);
 }
 .container{
 max-width:1200px;
@@ -21,23 +23,26 @@ justify-content:space-between;
 align-items:center;
 }
 .logo h1{
-font-size:2rem;
+font-size:1.75rem;
 font-weight:700;
 background:var(--gradient-primary);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 background-clip:text;
+will-change:transform;
 }
 .nav{
 display:flex;
 gap:2rem;
+align-items:center;
 }
 .nav a{
 color:var(--text-secondary);
 text-decoration:none;
 font-weight:500;
-transition:var(--transition);
+transition:color 0.15s ease;
 position:relative;
+will-change:transform;
 }
 .nav a:hover{
 color:var(--text-primary);
@@ -50,7 +55,8 @@ left:0;
 width:0;
 height:2px;
 background:var(--gradient-primary);
-transition:width 0.3s ease;
+transition:width 0.15s ease;
+will-change:width;
 }
 .nav a:hover::after{
 width:100%;
@@ -60,7 +66,7 @@ width:100%;
 padding:0 1rem;
 }
 .nav{
-gap:1rem;
+gap:1.5rem;
 }
 .nav a{
 font-size:0.9rem;

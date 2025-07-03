@@ -7,17 +7,17 @@ return (
 <motion.button
 onClick={toggleTheme}
 className="theme-toggle"
-whileHover={{scale:1.1}}
-whileTap={{scale:0.9}}
-initial={{opacity:0}}
-animate={{opacity:1}}
-transition={{duration:0.3}}
+whileHover={{scale:1.05}}
+whileTap={{scale:0.95}}
+initial={{opacity:0,scale:0.8}}
+animate={{opacity:1,scale:1}}
+transition={{duration:0.3,ease:"easeOut"}}
 >
 <motion.div
-animate={{rotate:theme==='dark'?180:0}}
-transition={{duration:0.3}}
+animate={{rotate:theme==='dark'?0:180}}
+transition={{duration:0.3,ease:"easeOut"}}
 >
-{theme==='dark'?<Sun size={20}/>:<Moon size={20}/>}
+{theme==='dark'?<Sun size={18}/>:<Moon size={18}/>}
 </motion.div>
 </motion.button>
 )
