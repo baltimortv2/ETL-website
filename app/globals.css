@@ -41,10 +41,32 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.dark {
+  color-scheme: dark;
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --accent-color: #3b82f6;
+}
+
+.light {
+  color-scheme: light;
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --accent-color: #2563eb;
+}
+
+.dark body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.light body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 /* Glassmorphism utilities */
@@ -157,13 +179,70 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Dark mode adjustments */
-.dark .glass {
-  background: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Smooth animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease both;
 }
 
-.dark .glass-strong {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.animate-fade-out {
+  animation: fadeOut 0.5s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Smooth transitions for all animations */
+* {
+  transition-property: opacity, transform, height, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+/* Light mode adjustments */
+.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light .glass-strong {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.light .text-gradient {
+  background: linear-gradient(135deg, #2563eb, #0284c7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .bg-gray-900 {
+  background-color: var(--bg-primary);
+}
+
+.light .text-white {
+  color: var(--text-primary);
+}
+
+.light .text-gray-300 {
+  color: var(--text-secondary);
+}
+
+.light .border-gray-700 {
+  border-color: #cbd5e1;
+}
+
+.light .bg-gray-700 {
+  background-color: #e2e8f0;
+}
+
+.light .bg-gray-800 {
+  background-color: #cbd5e1;
 } 

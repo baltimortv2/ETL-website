@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Image as ImageIcon } from 'lucide-react'
 
 export default function PortfolioSection() {
   const portfolioItems = [
@@ -43,6 +44,12 @@ export default function PortfolioSection() {
             >
               <div className="aspect-video bg-gradient-to-br from-blue-900 to-purple-900 relative overflow-hidden">
                 <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <ImageIcon className="w-12 h-12 text-blue-400 opacity-40 mb-3" />
+                  <div className="px-4 py-2 bg-gray-800/70 rounded-lg text-center">
+                    <p className="text-gray-300 text-sm">Изображение будет добавлено позже</p>
+                  </div>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2 text-gradient">{item.title}</h3>

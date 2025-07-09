@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Play } from 'lucide-react'
+import { Play, Video } from 'lucide-react'
 
 export default function VideoSection() {
   return (
@@ -32,8 +32,14 @@ export default function VideoSection() {
             className="glass-strong rounded-lg p-6 hover:glass transition-all duration-300 group"
           >
             <div className="aspect-video bg-gradient-to-br from-blue-900 to-purple-900 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
-              <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-200" />
-              <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-200"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <Video className="w-16 h-16 text-blue-400 opacity-30 mb-4" />
+                <div className="px-4 py-2 bg-gray-800/80 rounded-lg text-center">
+                  <p className="text-gray-300">Видео будет доступно позже</p>
+                </div>
+              </div>
+              <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300"></div>
+              <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-200 z-10" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gradient">Освещение лестниц</h3>
             <p className="text-gray-300">Демонстрация работы автоматического освещения лестниц с датчиками движения</p>
@@ -46,8 +52,14 @@ export default function VideoSection() {
             className="glass-strong rounded-lg p-6 hover:glass transition-all duration-300 group"
           >
             <div className="aspect-video bg-gradient-to-br from-purple-900 to-blue-900 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
-              <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-200" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <Video className="w-16 h-16 text-blue-400 opacity-30 mb-4" />
+                <div className="px-4 py-2 bg-gray-800/80 rounded-lg text-center">
+                  <p className="text-gray-300">Видео будет доступно позже</p>
+                </div>
+              </div>
               <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-200"></div>
+              <Play className="w-16 h-16 text-white group-hover:scale-110 transition-transform duration-200 z-10" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gradient">Подсветка мебели</h3>
             <p className="text-gray-300">Умное освещение мебели с датчиками открытия и настраиваемыми сценариями</p>

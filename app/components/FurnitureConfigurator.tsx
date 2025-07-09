@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Check, QrCode, Mail, MessageCircle, Phone, Plus, Minus } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Check, QrCode, Mail, MessageCircle, Phone, Plus, Minus, Box, BookOpen, ShoppingBag, Archive, Package } from 'lucide-react'
 import QRCode from 'react-qr-code'
 
 interface FurnitureItem {
@@ -45,11 +45,11 @@ export default function FurnitureConfigurator({ onSelectionChange }: Props) {
   ]
 
   const furnitureTypes = [
-    { name: 'Шкаф', basePrice: 5000, icon: '🗄️' },
-    { name: 'Стеллаж', basePrice: 3000, icon: '📚' },
-    { name: 'Витрина', basePrice: 7000, icon: '🏪' },
-    { name: 'Комод', basePrice: 4000, icon: '🧰' },
-    { name: 'Тумба', basePrice: 2500, icon: '📦' }
+    { name: 'Шкаф', basePrice: 5000, icon: Box },
+    { name: 'Стеллаж', basePrice: 3000, icon: BookOpen },
+    { name: 'Витрина', basePrice: 7000, icon: ShoppingBag },
+    { name: 'Комод', basePrice: 4000, icon: Archive },
+    { name: 'Тумба', basePrice: 2500, icon: Package }
   ]
 
   const ledTypes = [
@@ -189,6 +189,57 @@ export default function FurnitureConfigurator({ onSelectionChange }: Props) {
     }
   }
 
+  const renderFurnitureIllustration = () => {
+    if (!config.items[selectedItemIndex]) return null;
+    
+    const selectedItem = config.items[selectedItemIndex];
+    const itemType = selectedItem.type;
+    const shelvesCount = selectedItem.shelves.length;
+    const currentShelf = selectedItem.shelves[selectedShelfIndex] || { width: 60, depth: 30 };
+    
+    return (
+      <div className="bg-gray-800 rounded-lg p-4 mb-4">
+        <h4 className="text-blue-400 font-semibold mb-3">Иллюстрация: {itemType} #{selectedItemIndex + 1}</h4>
+        <div className="relative bg-gray-700 rounded-lg overflow-hidden" style={{ height: '200px' }}>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative">
+              {/* Изображение мебели */}
+              <div className="mb-4">
+                {getFurnitureIcon(itemType, "w-16 h-16 text-blue-400 mx-auto")}
+              </div>
+              
+              {/* Размеры */}
+              <div className="text-center">
+                <div className="mb-2">
+                  <span className="text-gray-300">Полок: {shelvesCount}</span>
+                </div>
+                <div className="flex justify-center space-x-4">
+                  <div className="text-center">
+                    <div className="w-8 h-1 bg-blue-500 mx-auto mb-1"></div>
+                    <span className="text-sm text-gray-300">{currentShelf.width} см</span>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-1 h-8 bg-blue-500 mx-auto mb-1"></div>
+                    <span className="text-sm text-gray-300">{currentShelf.depth} см</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  const getFurnitureIcon = (type: string, className: string = "w-12 h-12") => {
+    const furniture = furnitureTypes.find(f => f.name === type);
+    if (furniture) {
+      const IconComponent = furniture.icon;
+      return <IconComponent className={className} />;
+    }
+    return <Box className={className} />;
+  };
+
   const renderStep = () => {
     switch (currentStep) {
       case 1:
@@ -203,7 +254,7 @@ export default function FurnitureConfigurator({ onSelectionChange }: Props) {
                   onClick={() => addFurnitureItem(furniture.name)}
                   className="p-4 bg-gray-700 rounded-lg border-2 border-gray-600 hover:border-blue-500 cursor-pointer transition-all duration-200 text-center"
                 >
-                  <div className="text-4xl mb-2">{furniture.icon}</div>
+                  <furniture.icon className="w-12 h-12 text-blue-400 mx-auto mb-2" />
                   <h5 className="font-semibold text-white">{furniture.name}</h5>
                   <p className="text-blue-400 text-sm">{furniture.basePrice}₽</p>
                 </motion.div>
@@ -221,7 +272,7 @@ export default function FurnitureConfigurator({ onSelectionChange }: Props) {
                     className="flex items-center justify-between p-4 bg-gray-700 rounded-lg"
                   >
                     <div className="flex items-center space-x-4">
-                      <span className="text-2xl">{furnitureTypes.find(f => f.name === item.type)?.icon}</span>
+                      {getFurnitureIcon(item.type, "w-8 h-8 text-blue-400")}
                       <div>
                         <h5 className="font-semibold text-white">{item.type} #{index + 1}</h5>
                         <p className="text-gray-300">Количество: {item.count}</p>
@@ -289,6 +340,8 @@ export default function FurnitureConfigurator({ onSelectionChange }: Props) {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div>
+                {renderFurnitureIllustration()}
+                
                 <h5 className="font-semibold text-white mb-3">Выберите элемент:</h5>
                 <div className="space-y-2">
                   {config.items.map((item, index) => (

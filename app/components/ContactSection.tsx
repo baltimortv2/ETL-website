@@ -33,7 +33,7 @@ export default function ContactSection() {
           >
             <Phone className="w-12 h-12 text-blue-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-gradient">Телефон</h3>
-            <p className="text-gray-300">+7 (495) 123-45-67</p>
+            <p className="text-gray-300">+7 (495) 991-17-95</p>
           </motion.div>
 
           <motion.div
@@ -44,7 +44,7 @@ export default function ContactSection() {
           >
             <Mail className="w-12 h-12 text-blue-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-gradient">Email</h3>
-            <p className="text-gray-300">info@etl-automatic.ru</p>
+            <p className="text-gray-300">info@etl-home.ru</p>
           </motion.div>
 
           <motion.div
@@ -55,7 +55,7 @@ export default function ContactSection() {
           >
             <MapPin className="w-12 h-12 text-blue-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2 text-gradient">Адрес</h3>
-            <p className="text-gray-300">г. Москва, ул. Примерная, д. 1</p>
+            <p className="text-gray-300">г. Москва, 2-я ул. Марьиной рощи, д. 2А</p>
           </motion.div>
 
           <motion.div

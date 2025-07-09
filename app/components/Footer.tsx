@@ -18,19 +18,19 @@ export default function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <div className="relative w-8 h-8">
                 <Image
-                  src="/logo.svg"
-                  alt="ETL Automatic"
+                  src="/ETL-website/logo.svg"
+                  alt="ETL"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold text-gradient">ETL Automatic</span>
+              <span className="text-xl font-bold text-gradient">ETL</span>
             </div>
             <p className="text-gray-300 mb-4">
               Профессиональные решения для автоматического освещения лестниц и мебели
             </p>
             <p className="text-gray-400 text-sm">
-              © 2024 ETL Automatic. Все права защищены.
+              © 2024 ETL. Все права защищены.
             </p>
           </motion.div>
 
@@ -57,15 +57,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">+7 (495) 123-45-67</span>
+                <span className="text-gray-300">+7 (495) 991-17-95</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">info@etl-automatic.ru</span>
+                <span className="text-gray-300">info@etl-home.ru</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">г. Москва, ул. Примерная, д. 1</span>
+                <span className="text-gray-300">г. Москва, 2-я ул. Марьиной рощи, д. 2А</span>
               </div>
             </div>
           </motion.div>

@@ -34,6 +34,7 @@ export default function Header() {
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode)
     document.documentElement.classList.toggle('dark')
+    document.documentElement.classList.toggle('light')
   }
 
   const toggleLanguage = () => {
@@ -54,13 +55,13 @@ export default function Header() {
           >
             <div className="relative w-12 h-12">
               <Image
-                src="/logo.svg"
-                alt="ETL Automatic"
+                src="/ETL-website/logo.svg"
+                alt="ETL"
                 fill
                 className="object-contain"
               />
             </div>
-            <span className="text-xl font-bold text-gradient">ETL Automatic</span>
+            <span className="text-xl font-bold text-gradient">ETL</span>
           </motion.div>
 
           <nav className="hidden lg:flex items-center space-x-8">

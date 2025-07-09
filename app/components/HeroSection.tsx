@@ -65,7 +65,7 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
             >
-              <span className="text-gradient">ETL Automatic</span>
+              <span className="text-gradient">ETL</span>
             </motion.h1>
             
             <motion.p

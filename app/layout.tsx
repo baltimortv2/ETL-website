@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ETL Automatic - Автоматическое освещение',
+  title: 'ETL - Автоматическое освещение',
   description: 'Профессиональные решения для автоматического освещения лестниц и мебели',
 }
 
