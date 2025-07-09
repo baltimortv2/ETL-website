@@ -1,0 +1,17 @@
+---
+description: Общие правила для всех чатов
+alwaysApply: true
+---
+- Always answer in Russian
+- Always separate large individual blocks of code into separate files for easy editing and modification
+- Don't write comments in code
+- Be proactive, suggest alternatives
+- Prioritize technical details over generic advice
+- Break down major changes into smaller ones
+- When using the terminal, if a command is finished but the terminal is not closed, close the terminal automatically
+- Create a task list when working on a large task and follow the list, add as many tasks to the list as possible
+- Use simple and workable options to solve the problem, use ready-made databases and other people's work in similar projects
+- If you are working on a task involving design, use a modern simple beautiful style that is light and easy to use
+- If you are working on a task that includes a control
+Button, panel, or some moving/reacting to something element of the interface, it should always have animation, smooth and not complicated.
+- Always delete temporary files and folders or those that are no longer used or needed in the code

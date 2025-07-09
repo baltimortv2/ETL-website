@@ -6,8 +6,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ETL' : '',
-  basePath: process.env.NODE_ENV === 'production' ? '/ETL' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/ETL-website' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/ETL-website' : '',
 }
 
 module.exports = nextConfig 
