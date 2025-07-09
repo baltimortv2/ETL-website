@@ -1,0 +1,10 @@
+---
+description: Ссылки и примеры для использования
+globs:
+alwaysApply: false
+---
+- Информация о содержании сайта - [https://etl-home.ru, https://etl-home.ru/podsvetka_mebeli.html]
+- Пример конфигуратора - https://sequa-licht.de/en/SequaConfigurator
+- Пример дизайна сайта - https://vite.dev/
+- Анимации которые нужно использовать - [https://examples.motion.dev/js/notifications-stack, https://examples.motion.dev/js/family-dialog, https://examples.motion.dev/js/gestures, https://examples.motion.dev/js/gestures, https://examples.motion.dev/js/hover, https://examples.motion.dev/js/modal, https://examples.motion.dev/vue/number-radix-slider, https://examples.motion.dev/vue/radix-checkbox, https://examples.motion.dev/vue/split-text, https://examples.motion.dev/vue/layout-animation]
+
